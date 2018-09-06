@@ -11,6 +11,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get -y update && \
     apt-get install -y \
+        git \
         python3 \
         python3-setuptools \
         wget \
