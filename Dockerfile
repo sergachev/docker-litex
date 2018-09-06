@@ -33,3 +33,5 @@ RUN git clone --recurse-submodules https://github.com/riscv/riscv-gnu-toolchain 
     make install && \
     cd / && \
     rm -rf riscv-gnu-toolchain
+
+ENV PATH "/opt/riscv32i/bin:$PATH"
