@@ -25,13 +25,11 @@ RUN mkdir litex && \
     python3 litex_setup.py init install && \
     rm -rf litex_setup.py
 
-RUN wget http://ftp.gnu.org/gnu/binutils/binutils-${BINUTILS_VERSION}.tar.gz && \
-    tar xvf binutils-${BINUTILS_VERSION}.tar.gz && \
-    cd binutils-${BINUTILS_VERSION} && \
-    mkdir build && \
-    cd build && \
-    ../configure --target=lm32-elf && \
+RUN git clone --recurse-submodules https://github.com/riscv/riscv-gnu-toolchain && \
+    cd riscv-gnu-toolchain && \
+    mkdir /opt/riscv32im && \
+    ./configure --prefix=/opt/riscv32im --with-arch=rv32im && \
     make && \
     make install && \
     cd / && \
-    rm -rf /binutils-${BINUTILS_VERSION} /binutils-${BINUTILS_VERSION}.tar.gz
+    rm -rf riscv-gnu-toolchain
