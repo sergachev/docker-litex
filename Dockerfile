@@ -23,7 +23,8 @@ RUN mkdir litex && \
     cd litex && \
     wget https://raw.githubusercontent.com/enjoy-digital/litex/${LITEX_VERSION}/litex_setup.py && \
     python3 litex_setup.py init install && \
-    rm -rf litex_setup.py
+	cd / && \
+	rm -rf litex
 
 RUN git clone --recurse-submodules https://github.com/riscv/riscv-gnu-toolchain && \
     cd riscv-gnu-toolchain && \
