@@ -1,7 +1,6 @@
 FROM lerwys/iverilog
 
 ENV LITEX_VERSION 20d6fcac61f16ab8b794e8cf556bafd5ab374321
-ENV BINUTILS_VERSION 2.31
 
 LABEL \
       com.github.lerwys.docker.dockerfile="Dockerfile" \
