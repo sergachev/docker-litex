@@ -25,14 +25,3 @@ RUN mkdir litex && \
     python3 litex_setup.py init install && \
 	cd / && \
 	rm -rf litex
-
-RUN git clone --recurse-submodules https://github.com/riscv/riscv-gnu-toolchain && \
-    cd riscv-gnu-toolchain && \
-    mkdir /opt/riscv32im && \
-    ./configure --prefix=/opt/riscv32im --with-arch=rv32im && \
-    make && \
-    make install && \
-    cd / && \
-    rm -rf riscv-gnu-toolchain
-
-ENV PATH "/opt/riscv32i/bin:$PATH"
