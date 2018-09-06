@@ -22,6 +22,4 @@ RUN apt-get -y update && \
 RUN mkdir litex && \
     cd litex && \
     wget https://raw.githubusercontent.com/enjoy-digital/litex/${LITEX_VERSION}/litex_setup.py && \
-    python3 litex_setup.py init install && \
-	cd / && \
-	rm -rf litex
+    python3 litex_setup.py init install
