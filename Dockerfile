@@ -16,6 +16,9 @@ RUN apt-get -y update && \
         python3-setuptools \
         wget \
         tar \
+        automake \
+        autoconf \
+        make \
         gzip && \
     rm -rf /var/lib/apt/lists/*
 
